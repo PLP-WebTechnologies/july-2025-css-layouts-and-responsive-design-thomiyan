@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ayanda Thomas">
+    <title>Responsive Webpage with Grid & Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with logo and navigation, aligned using Flexbox -->
+    <header>
+        <div class="logo">Ayanda Thomas</div>
+        <nav aria-label="main navigation">
+            <ul class="nav-list" >
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main layout section using CSS Grid for sidebar/content -->
+    <div class="main-layout">
+        <!-- Sidebar navigation area -->
+        <aside class="sidebar">
+            <h2>My Details</h2>
+            <ul>
+                <li><a href="#">Personal details</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Contact & Addresses</a></li>
+            </ul>
+        </aside>
+        
+        <!-- Main content area -->
+        <main class="content">
+            <h1>Welcome to Ayanda's Page</h1>
+            <p>This layout demonstrates both CSS Grid and Flexbox.</p>
+            
+            <!-- Card section, cards arranged using Flexbox -->
+            <section class="card-section">
+                <h2>Featured Cards</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Card One</h3>
+                        <p>Flexbox is used to arrange these cards responsively.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Card Two</h3>
+                        <p>Cards stack or align based on screen size.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Card Three</h3>
+                        <p>Use Flexbox for easy alignment and spacing.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2025 Ayanda Thomas. All rights reserved.</p>
+    </footer>
+</body>
+</html>

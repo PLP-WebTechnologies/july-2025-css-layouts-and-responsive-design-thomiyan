@@ -1,0 +1,212 @@
+/* ---------- Base Styles ---------- */
+:root {
+    --primary: #2d3e50;
+    --accent: #3498db;
+    --bg: #f4f7fa;
+    --sidebar-bg: #e5e9ed;
+    --card-bg: #fff;
+    --footer-bg: #2d3e50;
+    --footer-color: #fff;
+}
+
+/* Apply box-sizing for consistency across elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* ---------- Header and Navigation (Flexbox) ---------- */
+header {
+    /* Use Flexbox for horizontal alignment of logo and nav */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--primary);
+    color: #fff;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Navigation bar with Flexbox for horizontal links */
+.nav-list {
+    display: flex;            /* Flexbox aligns nav items horizontally */
+    gap: 30px;                /* Spacing between nav links */
+    list-style: none;
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-list li a:hover {
+    color: var(--accent);     /* Accent color on hover */
+}
+
+/* ---------- Main Layout using CSS Grid ---------- */
+.main-layout {
+    /* Grid defines sidebar and content columns */
+    display: grid;
+    grid-template-columns: 260px 1fr; /* Sidebar and main content */
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+    min-height: 60vh;
+}
+
+/* ---------- Sidebar Styles ---------- */
+.sidebar {
+    background: var(--sidebar-bg);
+    padding: 25px 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(45,62,80,0.07); /* Subtle shadow */
+}
+
+.sidebar h2 {
+    margin-bottom: 16px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: var(--primary);
+    text-decoration: none;
+    padding: 5px 7px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.sidebar ul li a:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* ---------- Main Content ---------- */
+.content {
+    padding: 0 16px;
+}
+
+.content h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.content p {
+    margin-bottom: 25px;
+}
+
+/* ---------- Card Section (Flexbox) ---------- */
+.card-section {
+    margin-top: 30px;
+}
+
+/* Card container uses Flexbox for responsive alignment of cards */
+.card-container {
+    display: flex;            /* Flexbox for cards */
+    gap: 30px;
+    flex-wrap: wrap;          /* Allow cards to wrap to new rows on small screens */
+}
+
+/* Individual card styles */
+.card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(45,62,80,0.10); /* Subtle shadow */
+    padding: 20px;
+    flex: 1 1 220px;          /* Grow, shrink, initial basis */
+    min-width: 220px;
+    max-width: 350px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background: var(--footer-bg);
+    color: var(--footer-color);
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+/* ---------- Responsive Breakpoints ---------- */
+
+/* --- Tablet Styles --- */
+@media (max-width: 900px) {
+    .main-layout {
+        grid-template-columns: 180px 1fr; /* Narrower sidebar */
+        gap: 16px;
+        padding: 16px;
+    }
+    .sidebar {
+        padding: 16px 10px;
+    }
+    .card-container {
+        gap: 16px;
+    }
+}
+
+/* --- Mobile Styles --- */
+@media (max-width: 600px) {
+    /* Stack header vertically, nav below logo */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+    }
+    .nav-list {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px;
+        width: 100%;
+        margin-top: 14px;
+    }
+    .main-layout {
+        grid-template-columns: 1fr;       /* Sidebar above content */
+        grid-template-rows: auto auto;
+        gap: 0;
+        padding: 10px;
+        margin: 16px auto;
+    }
+    .sidebar {
+        margin-bottom: 18px;
+        border-radius: 8px;
+        box-shadow: none;
+    }
+    .content {
+        padding: 0;
+    }
+    .card-container {
+        flex-direction: column;           /* Stack cards vertically */
+        gap: 16px;
+    }
+    .card {
+        min-width: 0;
+        max-width: 100%;
+    }
+    footer {
+        font-size: 16px;
+        padding: 14px 0;
+    }
+}
